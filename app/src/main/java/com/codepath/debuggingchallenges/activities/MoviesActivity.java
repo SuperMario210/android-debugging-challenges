@@ -4,7 +4,6 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
-import android.util.Log;
 
 import com.codepath.debuggingchallenges.R;
 import com.codepath.debuggingchallenges.adapters.MoviesAdapter;
@@ -48,7 +47,6 @@ public class MoviesActivity extends AppCompatActivity {
             @Override
             public void onSuccess(int statusCode, Header[] headers, JSONObject response) {
                 try {
-                    Log.i("DEBUG", "yeee got moovies");
                     JSONArray moviesJson = response.getJSONArray("results");
                     movies = Movie.fromJSONArray(moviesJson);
                     // Create the adapter to convert the array to views
